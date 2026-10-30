@@ -1,14 +1,36 @@
-
-import { Code2 } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 
 const skills = [
-  { name: "HTML", level: "90%" },
-  { name: "CSS", level: "80%" },
-  { name: "JavaScript", level: "70%" },
-  { name: "React", level: "65%" },
-  { name: "Tailwind CSS", level: "80%" },
-  { name: "Git & GitHub", level: "60%" },
+  {
+    name: "HTML",
+    level: "90%",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    level: "80%",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    level: "70%",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "React",
+    level: "65%",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    level: "80%",
+    logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+  },
+  {
+    name: "Git & GitHub",
+    level: "60%",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
 ];
 
 export default function Skills() {
@@ -28,34 +50,36 @@ export default function Skills() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:-translate-y-1 hover:border-cyan-400/50"
+              className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50"
             >
-              <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300">
-                <Code2 size={25} />
+              <div className="mb-5 grid h-14 w-14 place-items-center rounded-xl border border-slate-700 bg-slate-800/80 p-3">
+                <img
+                  src={skill.logo}
+                  alt={`${skill.name} logo`}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
               </div>
 
               <div className="mb-3 flex items-center justify-between gap-2">
                 <h3 className="font-bold text-white">
                   {skill.name}
                 </h3>
-                <span className="text-sm text-cyan-300">
+
+                <span className="text-sm font-medium text-cyan-300">
                   {skill.level}
                 </span>
               </div>
 
               <div className="h-2 overflow-hidden rounded-full bg-slate-700">
                 <div
-                  className="h-full rounded-full 'bg-gradient-to-r' from-cyan-400 to-blue-500"
+                  className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-700"
                   style={{ width: skill.level }}
                 />
               </div>
             </div>
           ))}
         </div>
-
-        <p className="mt-5 text-xs text-slate-500">
-          Update skill levels according to your actual experience.
-        </p>
       </div>
     </section>
   );
