@@ -85,7 +85,7 @@ export default function Home({ navigate }) {
             <span className="text-sm text-slate-500">Connect with me</span>
 
             <a
-              href="https://github.com/"
+              href="https://github.com/soumyaranjanmohanty9784/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -95,7 +95,7 @@ export default function Home({ navigate }) {
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/soumya-ranjan-mohanty-960020270?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

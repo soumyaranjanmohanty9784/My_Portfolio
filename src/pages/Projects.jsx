@@ -1,11 +1,11 @@
+
 import { ExternalLink, FolderKanban } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 
 const projects = [
   {
     title: "FLAVORIZ",
-    description:
-      "The Master Chefs Coocking Recipies",
+    description: "The Master Chefs Coocking Recipies",
     tech: ["HTML", "CSS"],
     image: "/images/flavoriz.png",
     liveLink: "https://practice2-mauve.vercel.app/",
@@ -20,9 +20,8 @@ const projects = [
   },
   {
     title: "UsabilityHub Landing Page Clone",
-    description:
-      "UsabilityHub Landing Page Clone",
-    tech: ["HTML","Tailwind"],
+    description: "UsabilityHub Landing Page Clone",
+    tech: ["HTML", "Tailwind"],
     image: "/images/Usabilityhub.png",
     liveLink: "https://tailwindassignment.vercel.app/",
   },
@@ -45,7 +44,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50"
             >
               {/* Project Image */}
               <a
@@ -53,7 +52,7 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`View ${project.title} live project`}
-                className="relative block h-48 overflow-hidden bg-gradient-to- br from-cyan-400/20 to-blue-600/10"
+                className="relative block h-48 shrink-0 overflow-hidden bg-gradient-to-br from-cyan-400/20 to-blue-600/10"
               >
                 <img
                   src={project.image}
@@ -66,18 +65,19 @@ export default function Projects() {
 
                 <div className="absolute inset-0 grid place-items-center bg-slate-950/20">
                   <div className="grid h-16 w-16 place-items-center rounded-2xl border border-cyan-300/20 bg-slate-950/80 text-cyan-300 backdrop-blur-sm transition group-hover:scale-110">
-                    <FolderKanban size={30} />
+                    {/* <FolderKanban size={30} /> */}
+                    <ExternalLink size={16} />
                   </div>
                 </div>
               </a>
 
               {/* Project Details */}
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <p className="text-sm font-medium text-cyan-300">
-                  PROJECT 0{index + 1}
+                  {/* PROJECT 0{index + 1} */}
                 </p>
 
-                <h3 className="mt-3 text-xl font-bold text-white">
+                <h3 className="mt-3 min-h-14 text-xl font-bold text-white">
                   {project.title}
                 </h3>
 
@@ -86,7 +86,7 @@ export default function Projects() {
                 </p>
 
                 {/* Technologies */}
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 flex min-h-10 flex-wrap content-start gap-2">
                   {project.tech.map((item) => (
                     <span
                       key={item}
@@ -98,15 +98,17 @@ export default function Projects() {
                 </div>
 
                 {/* Live Demo Button */}
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-cyan-400 px-4 py-2.5 font-semibold text-slate-950 transition hover:bg-cyan-300"
-                >
-                  Live Demo
-                  <ExternalLink size={16} />
-                </a>
+                <div className="mt-auto pt-6">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-cyan-400 px-4 py-2.5 font-semibold text-slate-950 transition hover:bg-cyan-300"
+                  >
+                    Live Demo
+                    <ExternalLink size={16} />
+                  </a>
+                </div>
               </div>
             </article>
           ))}
